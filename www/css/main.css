@@ -1,6 +1,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font: 13px Helvetica, Arial; }
 
+ion-footer-bar .emojione {
+  height: 20px;
+  margin: 2px;
+}
+
 #messages {
   margin: 10px;
   height: 80%;

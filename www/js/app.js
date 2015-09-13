@@ -99,7 +99,9 @@ angular.module('starter', ['ionic'])
     $('.convert-emoji a').click(function(e) {
       buffer.push($(this).attr('data-emoji'));
       var inflightText = buffer.join(' ')
-      $('#curm span').html(emojione.toImage(inflightText))
+      inflightText = emojione.toImage(inflightText).replace(/\/\/cdn.jsdelivr.net/g, 'https://cdn.jsdelivr.net');
+      $('#curm span').html(inflightText);
+
       return false;
     });
 
@@ -107,5 +109,5 @@ angular.module('starter', ['ionic'])
 });
 
 var emojis = [
-  ':grinning:', ':joy:', ':innocent:', ':yum:', ':smile_cat:', ':heart_eyes_cat:', ':scream_cat:', ':ghost:', ':rose:', ':cow2:', ':horse:', ':dog:', ':whale:', ':monkey_face:', ':star2:', ':pizza:', ':pineapple:', ':cake:'
+  ':grinning:', ':joy:', ':innocent:', ':yum:', ':smile_cat:', ':heart_eyes_cat:', ':scream_cat:', ':ghost:', ':rose:', ':heart:', ':horse:', ':dog:', ':whale:', ':monkey_face:', ':star2:', ':pizza:', ':pineapple:', ':cake:'
 ];
