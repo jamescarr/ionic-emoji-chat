@@ -83,6 +83,8 @@ angular.module('starter', ['ionic'])
 
     socket.on('/user/assign', function(avatar) {
       user = avatar;
+      $('#avatar').html($('<img src="http://hidden-peak-3397.herokuapp.com/images/avatars/' + user + '.png"/>'));
+
     });
 
     socket.on('/user/join', function(avatar) {
