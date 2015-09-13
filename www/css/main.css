@@ -6,7 +6,7 @@ body { font: 13px Helvetica, Arial; }
   height: 80%;
   background: white;
   width: 100%;
-  overflow: overflow;
+  overflow: scroll;
   padding-bottom: 50px;
 }
 

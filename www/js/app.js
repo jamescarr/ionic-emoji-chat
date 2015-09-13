@@ -5,8 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 function message_template() {
   var templates = {
-    true: Handlebars.compile("<div class='contained-message row'><div class='col-15'><img src='http://hidden-peak-3397.herokuapp.com:80/images/avatars/{{ user }}.png' class='avatar'></div><div class='col-75 message even'>{{{ msg }}}</div></div>"),
-    false: Handlebars.compile("<div class='contained-message row'><div class='odd message col-75'>{{{ msg }}}</div><div class='col-15'><img src='http://hidden-peak-3397.herokuapp.com:80/images/avatars/{{ user }}.png' class='avatar'></div></div>"),
+    true: Handlebars.compile("<div class='contained-message row'><div class='col-15'><img src='http://hidden-peak-3397.herokuapp.com/images/avatars/{{ user }}.png' class='avatar'></div><div class='col-75 message even'>{{{ msg }}}</div></div>"),
+    false: Handlebars.compile("<div class='contained-message row'><div class='odd message col-75'>{{{ msg }}}</div><div class='col-15'><img src='http://hidden-peak-3397.herokuapp.com/images/avatars/{{ user }}.png' class='avatar'></div></div>"),
   }
   var current_user = null;
   var current_template = false;
@@ -27,7 +27,7 @@ function adjust_scroll() {
 
   });
   console.log(height);
-  $('ion-content').animate({scrollTop: height}, 1000);
+  $('ion-content').animate({scrollTop: height-100});
 }
 
 function ChatStream() {
@@ -59,7 +59,13 @@ angular.module('starter', ['ionic'])
     var stream = new ChatStream();
 
     $(".convert-emoji").each(function() {
+      var self = this;
+      emojis.forEach(function(emoji) {
+        var fragment = $(' <a href="#" data-emoji="'+emoji+'">'+emoji+'</a>\n');
+        $(self).append(fragment);
+      });
       var original = $(this).html();
+      console.log(original);
       // use .shortnameToImage if only converting shortnames (for slightly better performance)
       var converted = emojione.toImage(original);
       $(this).html(converted);
@@ -96,4 +102,8 @@ angular.module('starter', ['ionic'])
     });
 
   });
-})
+});
+
+var emojis = [
+  ':grinning:', ':joy:', ':innocent:', ':yum:', ':smile_cat:', ':heart_eyes_cat:', ':scream_cat:', ':ghost:', ':rose:', ':cow2:', ':horse:', ':dog:', ':whale:', ':monkey_face:', ':star2:', ':pizza:', ':pineapple:', ':cake:'
+]
