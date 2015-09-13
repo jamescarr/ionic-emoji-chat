@@ -2,8 +2,12 @@
 body { font: 13px Helvetica, Arial; }
 
 ion-footer-bar .emojione {
-  height: 20px;
+  height: 25px;
   margin: 2px;
+}
+
+#curm .emojione {
+  height: 15px;
 }
 
 #messages {
