@@ -36,6 +36,7 @@ function ChatStream() {
 
 ChatStream.prototype.append = function(message) {
   var block = this.msg_template(message.user)(message);
+  block = block.replace(/\/\/cdn.jsdelivr.net/g, 'https://cdn.jsdelivr.net')
 
   $('#messages').append($(block));
   adjust_scroll();
@@ -65,9 +66,10 @@ angular.module('starter', ['ionic'])
         $(self).append(fragment);
       });
       var original = $(this).html();
-      console.log(original);
       // use .shortnameToImage if only converting shortnames (for slightly better performance)
       var converted = emojione.toImage(original);
+      converted = converted.replace(/\/\/cdn.jsdelivr.net/g, 'https://cdn.jsdelivr.net')
+
       $(this).html(converted);
     });
 
