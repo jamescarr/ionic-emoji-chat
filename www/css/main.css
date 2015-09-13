@@ -1,0 +1,48 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font: 13px Helvetica, Arial; }
+
+#messages {
+  margin: 10px;
+  height: 80%;
+  background: white;
+  width: 100%;
+  overflow: overflow;
+  padding-bottom: 50px;
+}
+
+.avatar {
+  height: 98px;
+  margin: 5px;
+  height: 70px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+
+  -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+}
+.footer {
+  height: 100px;
+}
+.message {
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.message.odd {
+  background-color: #f7f4d4;
+}
+
+.message.even {
+  background-color: #dcf3d4;
+}
+
+.contained-message {
+  margin: 5px;
+
+}
+
+ion-footer-bar ion-list div {
+  margin: 1px;
+}
