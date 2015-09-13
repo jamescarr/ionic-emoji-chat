@@ -111,5 +111,5 @@ angular.module('starter', ['ionic'])
 });
 
 var emojis = [
-  ':grinning:', ':joy:', ':innocent:', ':yum:', ':smile_cat:', ':heart_eyes_cat:', ':scream_cat:', ':ghost:', ':rose:', ':heart:', ':horse:', ':dog:', ':whale:', ':monkey_face:', ':star2:', ':pizza:', ':pineapple:', ':cake:'
+  ':grinning:', ':joy:',  ':yum:', ':heart_eyes_cat:', ':scream_cat:', ':ghost:', ':heart:', ':whale:', ':monkey_face:', ':star2:', ':pizza:', ':cake:'
 ];
