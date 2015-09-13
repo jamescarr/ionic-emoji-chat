@@ -5,8 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 function message_template() {
   var templates = {
-    true: Handlebars.compile("<div class='contained-message row'><div class='col-15'><img src='http://hidden-peak-3397.herokuapp.com/images/avatars/{{ user }}.png' class='avatar'></div><div class='col-75 message even'>{{{ msg }}}</div></div>"),
-    false: Handlebars.compile("<div class='contained-message row'><div class='odd message col-75'>{{{ msg }}}</div><div class='col-15'><img src='http://hidden-peak-3397.herokuapp.com/images/avatars/{{ user }}.png' class='avatar'></div></div>"),
+    true: Handlebars.compile("<div class='contained-message row'><div class='col-15'><img src='http://morning-chamber-7135.herokuapp.com/images/avatars/{{ user }}.png' class='avatar'></div><div class='col-75 message even'>{{{ msg }}}</div></div>"),
+    false: Handlebars.compile("<div class='contained-message row'><div class='odd message col-75'>{{{ msg }}}</div><div class='col-15'><img src='http://morning-chamber-7135.herokuapp.com/images/avatars/{{ user }}.png' class='avatar'></div></div>"),
   }
   var current_user = null;
   var current_template = false;
@@ -54,7 +54,7 @@ angular.module('starter', ['ionic'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-    var socket = io('http://hidden-peak-3397.herokuapp.com:80/');
+    var socket = io('http://morning-chamber-7135.herokuapp.com:80/');
     var buffer = [];
     var user   = null;
     var stream = new ChatStream();
@@ -83,7 +83,7 @@ angular.module('starter', ['ionic'])
 
     socket.on('/user/assign', function(avatar) {
       user = avatar;
-      $('#avatar').html($('<img src="http://hidden-peak-3397.herokuapp.com/images/avatars/' + user + '.png"/>'));
+      $('#avatar').html($('<img src="http://morning-chamber-7135.herokuapp.com/images/avatars/' + user + '.png"/>'));
 
     });
 
